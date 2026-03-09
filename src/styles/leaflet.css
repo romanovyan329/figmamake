@@ -1,0 +1,15 @@
+/* Leaflet CSS overrides */
+@import 'leaflet/dist/leaflet.css';
+
+/* Custom styles for leaflet in our app */
+.leaflet-container {
+  font-family: 'Inter', sans-serif;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 8px;
+}
+
+.leaflet-popup-content {
+  font-family: 'Inter', sans-serif;
+}
