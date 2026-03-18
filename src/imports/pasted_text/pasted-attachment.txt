@@ -1,0 +1,255 @@
+You are a senior product designer and mobile app architect.
+
+Refactor the existing boating/navigation app into a TOURNAMENT-FOCUSED WATER SPORTS PLATFORM.
+
+IMPORTANT:
+- Keep existing features: Map, Weather, Vessel profile
+- But move them to secondary / utility sections
+- Main focus = tournaments, competition, participation
+
+STYLE:
+- Keep current dark UI (navy background, teal accents)
+- Keep same design system (cards, rounded blocks, soft glow)
+- Maintain consistency with existing screens
+
+---
+
+## 🧠 CORE PRODUCT SHIFT
+
+Transform app into:
+"Water Sports Tournament Companion"
+
+Main entities:
+- Tournament
+- Season (user’s saved tournaments)
+- Results
+- Athlete profile
+
+---
+
+## 🏠 1. HOME SCREEN (REBUILD)
+
+Replace current "Sea Status" with:
+
+### HERO BLOCK:
+- Upcoming tournament (if registered)
+  - Name
+  - Date
+  - Location
+  - Status (Upcoming / Live / Finished)
+  - CTA: "View Details"
+
+OR
+
+- If no tournaments:
+  → "Find tournaments near you"
+
+---
+
+### SECTIONS:
+
+1. "My Season"
+- Horizontal scroll of saved tournaments
+- Status chips: Upcoming / Completed
+
+2. "Nearby Tournaments"
+- Based on location
+- Card: name, sport type, distance, date
+
+3. "Live Now"
+- Live tournaments (highlighted)
+
+---
+
+## 🔍 2. TOURNAMENTS SCREEN (NEW MAIN TAB)
+
+Create new tab: "Tournaments"
+
+### FEATURES:
+- Search input
+- Filters:
+  - Sport type (Fishing, Sailing, Wake, Jet Ski, Surf)
+  - Country / region
+  - Date range
+  - Difficulty / category
+
+---
+
+### TOURNAMENT CARD:
+- Name
+- Cover image
+- Location
+- Date
+- Participants count
+- Status badge
+
+CTA:
+- "Register"
+- "View"
+
+---
+
+## 🏁 3. TOURNAMENT DETAILS SCREEN (NEW)
+
+### HEADER:
+- Name
+- Location
+- Date
+- Sport type
+
+### BLOCKS:
+
+1. Overview
+- Description
+- Rules (short)
+
+2. Participants
+- List (avatars + names)
+
+3. Route / Area
+- Mini map preview
+
+4. Weather (reuse existing API)
+
+5. Actions:
+- Register / Unregister
+- Add to Season
+
+---
+
+## 🏆 4. RESULTS SCREEN (NEW)
+
+After tournament:
+
+### CONTENT:
+- Leaderboard
+  - Rank
+  - Name
+  - Score (time / weight / points)
+
+- Tabs:
+  - Overall
+  - By category
+
+- Highlight user position
+
+---
+
+## 📒 5. MY SEASON (NEW SCREEN)
+
+User personal tournament tracking
+
+### CONTENT:
+- Upcoming tournaments
+- Completed tournaments
+- Stats:
+  - Total participated
+  - Wins / top 3
+  - Points
+
+---
+
+## 🗺️ 6. MAP (DEMOTE TO TOOL)
+
+Keep existing map but:
+
+Add:
+- Tournament pins
+- Filters toggle:
+  - Tournaments
+  - Marinas
+  - Danger zones
+
+---
+
+## 🌦️ 7. WEATHER (KEEP, SIMPLIFY)
+
+Keep Open-Meteo integration
+
+Use:
+- For tournament context
+- For route planning
+
+---
+
+## 🚤 8. VESSEL PROFILE (KEEP AS OPTIONAL)
+
+Rename:
+"My Vessel" → "Equipment"
+
+Make optional:
+- Boat
+- Gear
+- Engine
+
+---
+
+## 📘 9. LOGBOOK → PERFORMANCE LOG
+
+Transform:
+- Trips → Tournament history
+
+Add:
+- Tournament results
+- Personal notes
+- Performance stats
+
+---
+
+## 🔘 10. NAVIGATION (UPDATE)
+
+Replace bottom tabs:
+
+OLD:
+Home / Weather / Map / Routes / Logbook
+
+NEW:
+Home / Tournaments / Map / Season / Profile
+
+---
+
+## 🧩 DATA MODEL (IMPORTANT)
+
+Tournament:
+- id
+- name
+- sport_type
+- location (lat/lng)
+- date_start / date_end
+- participants_count
+- status
+- description
+
+UserTournament:
+- user_id
+- tournament_id
+- status (registered / completed)
+
+Result:
+- tournament_id
+- user_id
+- rank
+- score
+
+---
+
+## ⚡ MVP PRIORITY
+
+Must have:
+- Tournament list
+- Filters
+- Register to tournament
+- View results
+- Basic season tracking
+
+Nice to have:
+- Live status
+- Map integration
+
+---
+
+OUTPUT:
+- Updated app structure
+- New screens
+- Updated navigation
+- Clean UX hierarchy

@@ -1,0 +1,84 @@
+/* Custom styles for Leaflet map in marine app */
+
+/* Fix Leaflet marker icon paths */
+.leaflet-default-icon-path {
+  background-image: url('https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png');
+}
+
+/* Marine marker custom styles */
+.marine-marker {
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Leaflet popup customization for dark theme */
+.leaflet-popup-content-wrapper {
+  background: #1e293b !important;
+  color: #f1f5f9 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.3), 0 4px 6px -4px rgb(0 0 0 / 0.3) !important;
+}
+
+.leaflet-popup-tip {
+  background: #1e293b !important;
+}
+
+.leaflet-container a.leaflet-popup-close-button {
+  color: #94a3b8 !important;
+  font-size: 20px !important;
+  padding: 8px 8px 0 0 !important;
+}
+
+.leaflet-container a.leaflet-popup-close-button:hover {
+  color: #f1f5f9 !important;
+}
+
+/* Map container - ensure it takes full height */
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+}
+
+/* Disable dragging when adding point */
+.leaflet-container.leaflet-grab {
+  cursor: grab;
+}
+
+.leaflet-container.leaflet-dragging {
+  cursor: grabbing;
+}
+
+/* Smooth transitions */
+.leaflet-fade-anim .leaflet-popup {
+  transition: opacity 0.2s ease-in-out;
+}
+
+/* Mobile touch improvements */
+.leaflet-container {
+  -webkit-tap-highlight-color: transparent;
+  tap-highlight-color: transparent;
+}
+
+/* Zoom control positioning (if we add it back) */
+.leaflet-control-zoom {
+  margin-top: 10px !important;
+  margin-right: 10px !important;
+  border: none !important;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.3) !important;
+}
+
+.leaflet-control-zoom a {
+  background: #1e293b !important;
+  color: #f1f5f9 !important;
+  border: none !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background: #334155 !important;
+}
+
+/* Remove Leaflet attribution control (we have custom one) */
+.leaflet-control-attribution {
+  display: none !important;
+}
